@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'companies#index'
+
+  resources :jobs, only: [:show, :index, :edit, :update]
+
   resources :companies do
     resources :jobs
   end
