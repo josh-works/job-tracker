@@ -7,10 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= link_to "Home", root_path %>
+  </header>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>
 <%= yield %>
+
+  <footer>
+    <div class="footer nav">
+      <%= link_to "New Company", new_company_path %>
+      <%= link_to "New Job", new_job_path %>
+      <%= link_to "New Category", new_category_path %>
+    </div>
+    <div class="footer new">
+      <%= link_to "All Companies", new_company_path %>
+      <%= link_to "All Jobs", new_job_path %>
+      <%= link_to "All Categories", new_category_path %>
+    </div>
+    <div class="misc">
+      <%= link_to "Cool D3 things", "pages/d3" %>
+    </div>
+
+  </footer>
 
 </body>
 </html>

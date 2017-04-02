@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   root 'companies#index'
-  resources :categories, only: [:create, :new, :create, :index, :edit, :destroy]
+  get '/pages/:page' => 'pages#show'
+  resources :categories, only: [:create, :show, :new, :create, :index, :edit, :destroy]
 
-  resources :jobs, only: [:show, :index, :edit, :update, :destroy] do
+  resources :jobs, only: [:show, :new, :index, :edit, :update, :destroy] do
   end
 
   resources :companies do

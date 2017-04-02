@@ -8,6 +8,11 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @jobs = @category.jobs
+  end
+
   def create
     @category = Category.find_or_create_by(category_params)
     redirect_to categories_path
